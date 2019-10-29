@@ -27,7 +27,7 @@ import java.util.concurrent.ConcurrentMap;
  */
 public abstract class CacheableRouterFactory implements RouterFactory {
     private ConcurrentMap<String, Router> routerMap = new ConcurrentHashMap<>();
-
+    private String test;
     @Override
     public Router getRouter(URL url) {
         routerMap.computeIfAbsent(url.getServiceKey(), k -> createRouter(url));
